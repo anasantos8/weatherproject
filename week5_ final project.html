@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/08183cc935.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        font-family: "Kalam", cursive;
+      }
+
+      h2 {
+        text-align: right;
+        color: #3282b8;
+      }
+
+      .fas {
+        text-align: center;
+        color: #ffcc00;
+        font-size: 30px;
+        padding: 10px;
+      }
+
+      .card-header {
+        color: #3282b8;
+      }
+
+      .card-text {
+        text-align: center;
+      }
+    </style>
+
+    <script></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Wheather forecast for Kids</h1>
+
+      <div class="row">
+        <div class="col">
+          <div class="container table-info">
+            <div class="row">
+              <div class="col-12"></div>
+              <form id="form-control">
+
+                <div class="input-group" id="inputLocation">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="form-text"
+                    placeholder="Where you want to go?"
+                  />
+                  <button type="submit" class="btn btn-outline-info" id="goLocation">
+                    Go!
+                  </button>
+                </div>
+              </form>
+          <button type="submit" class="btn btn-outline-info" id="currentLocationBotton">
+          Current Location
+          </button>
+          </form>
+            </div>
+
+            <h2 id="placeToGo">Where are you?</h2>
+            <h3 style="font-size:12pt;text-align:right;" id="time-now">
+              What time is it?
+            </h3>
+
+            <div class="row">
+              <div class="col-4">
+                <h3>Outside it's</h3>
+              </div>
+              <div class="col-4">
+                <img src="images/Cloud.png" class="img-fluid" alt="Cloudy" />
+              </div>
+              <div class="col-4">
+                <p>
+                  Max:<span id="max-value">15ºC</span> [<a
+                    href="#"
+                    id="max-celcius"
+                    >ºC</a
+                  >|<a href="#" id="max-far">ºF</a>]
+                </p>
+                <p>
+                  Min:<span id="min-value">4ºC</span> [<a
+                    href="#"
+                    id="min-celcius"
+                    >ºC</a
+                  >|<a href="#" id="min-far">ºF</a>]
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-8">
+                <h3>And this week will be...</h3>
+
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Monday</div>
+                      <i class="fas fa-bolt"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:14/min:5
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Tuesday</div>
+                      <i class="fas fa-wind"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:19/min:10
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Wednesday</div>
+                      <i class="fas fa-smog"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:7/min:0
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Thursday</div>
+                      <i class="fas fa-sun"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:20/min:9
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Friday</div>
+                      <i class="fas fa-cloud-sun-rain"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:12/min:0
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Saturday</div>
+                      <i class="fas fa-snowflake"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:10/min:3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card border-info mb-3"
+                      style="max-width: 18rem;"
+                    >
+                      <div class="card-header">Sunday</div>
+                      <i class="fas fa-bolt"></i>
+                      <a href="https://fonts.google.com/" target="_blank"> </a>
+                      <p class="card-text">
+                        max:14/min:5
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <img
+                  src="images/asianchild.png"
+                  class="img-fluid"
+                  alt="children"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var dia = new Date();
+      var weekDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
+
+      function write_today() {
+        let timeNow = document.querySelector("#time-now");
+        timeNow.innerHTML = `${
+          weekDays[dia.getDay()]
+        }, ${dia.getHours()}:${dia.getMinutes()}`;
+      }
+
+      let maxCelcius = document.querySelector("#max-celcius");
+      maxCelcius.addEventListener("click", function(event) {
+        document.querySelector("#max-value").innerHTML = "15ºC";
+      });
+
+      let minCelcius = document.querySelector("#min-celcius");
+      minCelcius.addEventListener("click", function(event) {
+        document.querySelector("#min-value").innerHTML = "4ºC";
+      });
+
+      let maxFar = document.querySelector("#max-far");
+      maxFar.addEventListener("click", function(event) {
+        document.querySelector("#max-value").innerHTML = "77ºF";
+      });
+
+      let minFar = document.querySelector("#min-far");
+      minFar.addEventListener("click", function(event) {
+        document.querySelector("#min-value").innerHTML = "32ºF";
+      });
+
+      function showCurrentLocation(event) {
+      
+        let searchInput = document.querySelector("#form-text");
+        let h2 = document.querySelector("#placeToGo");
+        let currentLocation = document.querySelector("#currentLocation");
+        let key = "96a2b55cf333405c0e3ab8837ae375c9";
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        let apiKey = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
+
+        placeToGo.innerHTML = `It is ${temperature} degrees,in ${response.data.name}`;
+        axios.get(apiKey).then(displayweather);
+        let button = document.querySelector("currentLocationBotton");
+        currentLocationBotton.addEventListener("click", currentLocation);
+
+        write_today();
+      }
+  
+
+      function getCurrentLocation() {
+        navigator.geolocation.getCurrentLocation(showPosition);
+      }
+    function currentTemperature(response) {
+      let currentTemperature = document.querySelector("#currentLocation");
+      temperature = Math.round(response.data.main.temp);
+      let description = response.data.weather[0].description;
+    
+    }
+    </script>
+  </body>
+</html>
