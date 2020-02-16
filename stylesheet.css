@@ -1,23 +1,23 @@
-     body {
-        font-family: "Kalam", cursive;
-      }
+body {
+  font-family: "Kalam", cursive;
+}
 
-      h2 {
-        text-align: right;
-        color: #3282b8;
-      }
+h2 {
+  text-align: right;
+  color: red;
+}
 
-      .fas {
-        text-align: center;
-        color: #ffcc00;
-        font-size: 30px;
-        padding: 10px;
-      }
+.fas {
+  text-align: center;
+  color: #ffcc00;
+  font-size: 30px;
+  padding: 10px;
+}
 
-      .card-header {
-        color: #3282b8;
-      }
+.card-header {
+  color: #3282b8;
+}
 
-      .card-text {
-        text-align: center;
-      }
+.card-text {
+  text-align: center;
+}
