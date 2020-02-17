@@ -1,212 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Document</title>
-    <script
-      src="https://kit.fontawesome.com/08183cc935.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-  
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/08183cc935.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <link rel="javascript" href="javacript.js"/>
-    <link rel="stylesheet" href="stylesheet.css"/>
-  </head>
-
-  <body>
-    <div class="container">
-      <h1>Wheather forecast for Kids</h1>
-
-      <div class="row">
-        <div class="col">
-          <div class="container table-info">
-            <div class="row">
-              <div class="col-12"></div>
-              <form id="form-control">
-
-                <div class="input-group" id="inputLocation">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="form-text"
-                    placeholder="Where you want to go?"
-                  />
-                  <button type="submit" class="btn btn-outline-info" id="goLocation">
-                    Go!
-                  </button>
-                </div>
-              </form>
-          <button type="submit" class="btn btn-outline-info" id="currentLocationBotton">
-          Current Location
-          </button>
-          </form>
-            </div>
-
-            <h2 id="placeToGo">Where are you?</h2>
-            <h3 style="font-size:12pt;text-align:right;" id="time-now">
-              What time is it?
-            </h3>
-
-            <div class="row">
-              <div class="col-4">
-                <h3>Outside it's</h3>
-              </div>
-              <div class="col-4">
-                <img src="images/Cloud.png" class="img-fluid" alt="Cloudy" />
-              </div>
-              <div class="col-4">
-                <p>
-                  Max:<span id="max-value">15ºC</span> [<a
-                    href="#"
-                    id="max-celcius"
-                    >ºC</a
-                  >|<a href="#" id="max-far">ºF</a>]
-                </p>
-                <p>
-                  Min:<span id="min-value">4ºC</span> [<a
-                    href="#"
-                    id="min-celcius"
-                    >ºC</a
-                  >|<a href="#" id="min-far">ºF</a>]
-                </p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-8">
-                <h3>And this week will be...</h3>
-
-                <div class="row">
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Monday</div>
-                      <i class="fas fa-bolt"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:14/min:5
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Tuesday</div>
-                      <i class="fas fa-wind"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:19/min:10
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Wednesday</div>
-                      <i class="fas fa-smog"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:7/min:0
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Thursday</div>
-                      <i class="fas fa-sun"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:20/min:9
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Friday</div>
-                      <i class="fas fa-cloud-sun-rain"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:12/min:0
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Saturday</div>
-                      <i class="fas fa-snowflake"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:10/min:3
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div
-                      class="card border-info mb-3"
-                      style="max-width: 18rem;"
-                    >
-                      <div class="card-header">Sunday</div>
-                      <i class="fas fa-bolt"></i>
-                      <a href="https://fonts.google.com/" target="_blank"> </a>
-                      <p class="card-text">
-                        max:14/min:5
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-4">
-                <img
-                  src="images/asianchild.png"
-                  class="img-fluid"
-                  alt="children"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link href="style.css"rel="stylesheet"/>
+ </head><body><div class="container"><h1>Wheather forecast for Kids</h1><div class="row"><div class="col"><div class="container table-info"><div class="row"><div class="col-12"></div><div class="input-group"id="inputLocation"><input type="text"
+    class="form-control"
+    id="form-text"
+    placeholder="Where you want to go?"
+    /><button type="click"class="btn btn-outline-info"id="goLocation">Go ! </button><button type="click"class="btn btn-outline-info"id="currentLocationBotton">Current Location </button></div></div><h2 id="placeToGo">Where are you?</h2><h3 style="font-size:12pt;text-align:right;"id="time-now">What time is it? </h3><div class="row"><div class="col-4"><h3>Outside it's</h3>
+</div><div class="col-4"><img src="images/Cloud.png"class="img-fluid"alt="Cloudy"/></div><div class="col-4"><p>Max:<span id="max-value">15ºC</span>[<a href="#"
+    id="max-celcius"
+    >ºC</a>|<a href="#"id="max-far">ºF</a>] </p><p>Min:<span id="min-value">4ºC</span>[<a href="#"
+    id="min-celcius"
+    >ºC</a>|<a href="#"id="min-far">ºF</a>] </p></div></div><div class="row"><div class="col-8"><h3>And this week will be...</h3><div class="row"><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Monday</div><i class="fas fa-bolt"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:14/min:5 </p></div></div><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Tuesday</div><i class="fas fa-wind"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:19/min:10 </p></div></div></div><div class="row"><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Wednesday</div><i class="fas fa-smog"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:7/min:0 </p></div></div><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Thursday</div><i class="fas fa-sun"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:20/min:9 </p></div></div></div><div class="row"><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Friday</div><i class="fas fa-cloud-sun-rain"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:12/min:0 </p></div></div><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Saturday</div><i class="fas fa-snowflake"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:10/min:3 </p></div></div></div><div class="row"><div class="col"><div class="card border-info mb-3"
+    style="max-width: 18rem;"
+    ><div class="card-header">Sunday</div><i class="fas fa-bolt"></i><a href="https://fonts.google.com/"target="_blank"></a><p class="card-text">max:14/min:5 </p></div></div></div></div><div class="col-4"><img src="images/asianchild.png"
+    class="img-fluid"
+    alt="children"
+    /></div></div></div></div></div></div>
+  <script src="index.js"></script>
   </body>
-</html>
+      
+      </html>
