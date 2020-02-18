@@ -21,6 +21,7 @@ maxCelcius.addEventListener("click", function (event) {
     document.querySelector("#max-value").innerHTML = "15ºC";
 });
 
+
 let minCelcius = document.querySelector("#min-celcius");
 minCelcius.addEventListener("click", function (event) {
     document.querySelector("#min-value").innerHTML = "4ºC";
@@ -38,9 +39,7 @@ minFar.addEventListener("click", function (event) {
 
 write_today();
 
-/**
- * WEEK 5
- */
+
 
 function displayWeather(response) {
     let temperature = Math.round(response.data.main.temp);
@@ -52,8 +51,7 @@ function displayWeather(response) {
 }
 
 function showPosition(position) {
-    //		let placeToGo = document.querySelector("#placeToGo");	
-    //		placeToGo.innerHTML = `Your Latitude is ${position.coords.latitude} and your longitude is ${position.coords.longitude}`;
+
 
     let key = "96a2b55cf333405c0e3ab8837ae375c9";
     let latitude = position.coords.latitude;
@@ -87,5 +85,4 @@ function showCityLocation() {
     axios.get(apiKey).then(displayWeather)
 }
 
-let cGB = document.querySelector("#goLocation");
-cGB.addEventListener("click", showCityLocation);
+let cGB = document
