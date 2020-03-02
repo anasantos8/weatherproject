@@ -40,7 +40,7 @@ function displayWeather(response) {
   let placeToGo = document.querySelector("#placeToGo");
 
   let description = document.querySelector("#description");
-  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
   maxValue = document.querySelector("#max-value");
   minValue = document.querySelector("#min-value");
 
@@ -52,11 +52,11 @@ function displayWeather(response) {
   placeToGo.innerHTML = `It is ${temperature}º degrees, in ${response.data.name}`;
 
   description.innerHTML = response.data.weather[0].description;
-  humidity.innerHTML = `${Math.round(generalWeather.humidity)} %`;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} Km/h`;
   maxValue.innerHTML = `${Math.round(generalWeather.temp_max)} ºC`;
   minValue.innerHTML = `${Math.round(generalWeather.temp_min)} ºC`;
 
-  precipitation.innerHTML = `${Math.round(generalWeather.temp_min)} %`;
+  precipitation.innerHTML = `${Math.round(response.data.main.humidity)} %`;
 
   icon.setAttribute(
     "src",
@@ -80,8 +80,6 @@ function showFar() {
 let ValueFar = document.querySelector("#min-far");
 ValueFar.addEventListener("click", showFar);
 
-// Farenheit = Math.round((celsius*1,8)+32);
-// Celsius = Math.round((Farenheit - 32) / 1,8);
 function showPosition(position) {
   let key = "96a2b55cf333405c0e3ab8837ae375c9";
   let latitude = position.coords.latitude;
