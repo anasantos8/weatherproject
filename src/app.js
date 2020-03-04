@@ -64,6 +64,56 @@ function displayWeather(response) {
   );
   icon.setAttribute("alt", response.data.weather[0].description);
 }
+
+function displayTempCol(localHour, minTemp, maxTemp, iconForecast) {
+  return (
+    '<div class="col">' +
+    "<div" +
+    'class="card border-info mb-3"' +
+    'style="max-width: 18rem;">' +
+    '<div class="card-header" id="hour">' +
+    localHour +
+    "</div>" +
+    '<i class="icon"></i>' +
+    '<a href="https://fonts.google.com/" target="_blank"> </a>' +
+    '<p class="card-text">max:' +
+    maxTemp +
+    "/min:" +
+    minTemp +
+    "</p>" +
+    "</div>" +
+   
+    "</div>"
+  
+
+  );
+}
+
+function displayForecast(response) {
+  let tempList = [
+    { time: "12:00", min: "5", max: "12" },
+    { time: "13:00", min: "6", max: "13" },
+    { time: "14:00", min: "9", max: "17" }
+  ];
+
+  let returnString = "";
+
+  for (let k = 0; k < tempList.length; k++)
+    returnString += displayTempCol(
+      tempList[k].time,
+      tempList[k].min,
+      tempList[k].max
+    );
+
+  let divDyn = document.querySelector("#forecast");
+  divDyn.innerHTML = returnString;
+}
+
+let key = "96a2b55cf333405c0e3ab8837ae375c9";
+//apiKey = `https://api.openweathermap.org/data/2.5/forecast?q=${name.value}&appid=${key}&units=metric`;
+apiKey = `https://api.openweathermap.org/data/2.5/forecast?q=tomar&appid=${key}&units=metric`;
+axios.get(apiKey).then(displayForecast);
+
 function showCelsius() {
   minValue.innerHTML = Math.round(generalWeather.temp_min);
   maxValue.innerHTML = Math.round(generalWeather.temp_max);
